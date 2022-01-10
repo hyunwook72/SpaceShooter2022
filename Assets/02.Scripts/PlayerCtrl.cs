@@ -6,6 +6,8 @@ public class PlayerCtrl : MonoBehaviour
     private float h;
     private float r;
 
+    public Animation anim;
+
     public float speed = 20.0f;
 
     // 1회 호출
