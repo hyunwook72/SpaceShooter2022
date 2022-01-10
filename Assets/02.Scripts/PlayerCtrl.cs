@@ -32,7 +32,7 @@ public class PlayerCtrl : MonoBehaviour
 
         // 벡터의 덧셈 연산
         // Vector3 moveDir = (전후진벡터) + (좌우벡터)
-        //이동처리
+        // 이동처리
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
         transform.Translate(moveDir.normalized * Time.deltaTime * speed);
