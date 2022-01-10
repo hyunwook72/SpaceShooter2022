@@ -20,7 +20,8 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("h=" + h); // 콘솔 뷰에 메시지 출력
 
         //transform.Translate(방향 * 속도 * 변위)
-        transform.Translate(Vector3.forward * 0.1f * v);
+        transform.Translate(Vector3.forward * 0.1f * v); //전진/후진
+        transform.Translate(Vector3.right * 0.1f * h);   //좌/우
     }
 
     /*
