@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    private float v;
+
     // 1회 호출
     void Start()
     {
@@ -11,7 +13,9 @@ public class PlayerCtrl : MonoBehaviour
     // 매 프레임 마다 호출, 화면을 랜더링하는 주기
     void Update()
     {
-        //transform.position += new Vector3(0, 0, 0.1f);
+        v = Input.GetAxis("Vertical"); //Up, Down, W, S // -1.0f ~ 0.0f ~ +1.0f
+        Debug.Log("v=" + v); // 콘솔 뷰에 메시지 출력
+
         transform.Translate(Vector3.forward * 0.1f);
     }
 
@@ -24,5 +28,14 @@ public class PlayerCtrl : MonoBehaviour
 
         Vector3.one     = Vector3(1, 1, 1)
         Vector3.zero    = Vector3(0, 0, 0)    
+    */
+
+    /*
+        외부 입력장치 (Input Class)
+            - 키보드
+            - 마우스
+            - 터치
+            - 컨트롤러
+            - 조이스틱    
     */
 }
