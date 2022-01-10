@@ -13,7 +13,8 @@ public class PlayerCtrl : MonoBehaviour
     // 1회 호출
     void Start()
     {
-
+        anim = this.gameObject.GetComponent<Animation>(); // 제너릭 타입(Generic Type)
+        // anim = GetComponent("Animation") as Animation;
     }
 
     // 매 프레임 마다 호출, 화면을 랜더링하는 주기, 호출간격이 불규칙
