@@ -30,7 +30,7 @@ public class PlayerCtrl : MonoBehaviour
         //이동처리
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        transform.Translate(moveDir.normalized * Time.deltaTime * 8.0f);
+        transform.Translate(moveDir.normalized * Time.deltaTime * speed);
 
         //회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * 80.0f * r);
