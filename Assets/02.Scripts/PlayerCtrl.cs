@@ -31,7 +31,7 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate(moveDir.normalized * 0.1f);
 
         //회전처리
-        transform.Rotate(Vector3.up * 80.0f * r);
+        transform.Rotate(Vector3.up * 50.0f * r);
 
         //Debug.Log("정규화 이전 벡터 =" + moveDir.magnitude);//정규화 이전의 벡터 크기
         //Debug.Log("정규화 벡터 =" + moveDir.normalized.magnitude); //정규화 벡터
