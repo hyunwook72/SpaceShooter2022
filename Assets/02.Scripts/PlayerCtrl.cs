@@ -6,6 +6,8 @@ public class PlayerCtrl : MonoBehaviour
     private float h;
     private float r;
 
+    [System.NonSerialized]  //C#
+    [HideInInspector]       //Unity API
     public Animation anim;
 
     public float speed = 20.0f;
@@ -14,7 +16,7 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>(); // 제너릭 타입(Generic Type)
-        // anim = GetComponent("Animation") as Animation;
+        anim.Play("Idle");
     }
 
     // 매 프레임 마다 호출, 화면을 랜더링하는 주기, 호출간격이 불규칙
