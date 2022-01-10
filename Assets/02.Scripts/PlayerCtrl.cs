@@ -40,27 +40,31 @@ public class PlayerCtrl : MonoBehaviour
         //회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * 80.0f * r);
 
-        //Debug.Log("정규화 이전 벡터 =" + moveDir.magnitude);//정규화 이전의 벡터 크기
-        //Debug.Log("정규화 벡터 =" + moveDir.normalized.magnitude); //정규화 벡터
+        // 애니메이션 처리
+        PlayerAnimation();
     }
 
-    /*
-        정규화 벡터(Normalized Vector), 유닛 벡터(Unit Vector)
-
-        Vector3.forward = Vector3(0, 0, 1)
-        Vector3.up      = Vector3(0, 1, 0)
-        Vector3.right   = Vector3(1, 0, 0)
-
-        Vector3.one     = Vector3(1, 1, 1)
-        Vector3.zero    = Vector3(0, 0, 0)    
-    */
-
-    /*
-        외부 입력장치 (Input Class)
-            - 키보드
-            - 마우스
-            - 터치
-            - 컨트롤러
-            - 조이스틱    
-    */
+    void PlayerAnimation()
+    {
+        if (v >= 0.1f) // 전진
+        {
+            anim.CrossFade("RunF", 0.25f);
+        }
+        else if (v <= -0.1f) // 후진
+        {
+            anim.CrossFade("RunB", 0.25f);
+        }
+        else if (h >= 0.1f) // 오른쪽
+        {
+            anim.CrossFade("RunR", 0.25f);
+        }
+        else if (h <= -0.1f) // 왼쪽
+        {
+            anim.CrossFade("RunL", 0.25f);
+        }
+        else
+        {
+            anim.CrossFade("Idle", 0.1f);
+        }
+    }
 }
