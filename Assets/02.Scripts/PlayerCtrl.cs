@@ -12,7 +12,7 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 
-    // 매 프레임 마다 호출, 화면을 랜더링하는 주기
+    // 매 프레임 마다 호출, 화면을 랜더링하는 주기, 호출간격이 불규칙
     void Update()
     {
         v = Input.GetAxis("Vertical"); //Up, Down, W, S // -1.0f ~ 0.0f ~ +1.0f
@@ -28,10 +28,10 @@ public class PlayerCtrl : MonoBehaviour
         //이동처리
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        transform.Translate(moveDir.normalized * 0.1f);
+        transform.Translate(moveDir.normalized * Time.deltaTime * 8.0f);
 
         //회전처리
-        transform.Rotate(Vector3.up * 50.0f * r);
+        transform.Rotate(Vector3.up * Time.deltaTime * 80.0f * r);
 
         //Debug.Log("정규화 이전 벡터 =" + moveDir.magnitude);//정규화 이전의 벡터 크기
         //Debug.Log("정규화 벡터 =" + moveDir.normalized.magnitude); //정규화 벡터
