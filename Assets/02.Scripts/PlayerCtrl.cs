@@ -6,6 +6,8 @@ public class PlayerCtrl : MonoBehaviour
     private float h;
     private float r;
 
+    public float speed = 8.0f;
+
     // 1회 호출
     void Start()
     {
