@@ -27,7 +27,9 @@ public class PlayerCtrl : MonoBehaviour
         // Vector3 moveDir = (전후진벡터) + (좌우벡터)
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-        transform.Translate(moveDir * 0.1f);
+        transform.Translate(moveDir.normalized * 0.1f);
+        //Debug.Log("정규화 이전 벡터 =" + moveDir.magnitude);//정규화 이전의 벡터 크기
+        //Debug.Log("정규화 벡터 =" + moveDir.normalized.magnitude); //정규화 벡터
     }
 
     /*
