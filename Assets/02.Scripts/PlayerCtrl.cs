@@ -16,7 +16,8 @@ public class PlayerCtrl : MonoBehaviour
         v = Input.GetAxis("Vertical"); //Up, Down, W, S // -1.0f ~ 0.0f ~ +1.0f
         Debug.Log("v=" + v); // 콘솔 뷰에 메시지 출력
 
-        transform.Translate(Vector3.forward * 0.1f);
+        //transform.Translate(방향 * 속도 * 변위)
+        transform.Translate(Vector3.forward * 0.1f * v);
     }
 
     /*
