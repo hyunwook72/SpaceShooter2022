@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerCtrl : MonoBehaviour
 {
     private float v;
+    private float h;
 
     // 1회 호출
     void Start()
@@ -14,7 +15,9 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         v = Input.GetAxis("Vertical"); //Up, Down, W, S // -1.0f ~ 0.0f ~ +1.0f
+        h = Input.GetAxis("Horizontal");// -1.0f ~ 0.0f ~ +1.0f
         Debug.Log("v=" + v); // 콘솔 뷰에 메시지 출력
+        Debug.Log("h=" + h); // 콘솔 뷰에 메시지 출력
 
         //transform.Translate(방향 * 속도 * 변위)
         transform.Translate(Vector3.forward * 0.1f * v);
